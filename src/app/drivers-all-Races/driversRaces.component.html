@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col-10 col-sm-5 col-md-4">
+      <driver-card-all-races
+        name="{{ driver.name }}"
+        age="{{ driver.age }}"
+        team="{{ driver.teamName }}"
+        rank="{{ driver.globalPosition }}"
+      ></driver-card-all-races>
+    </div>
+    <div class="col-10 col-sm-3 col-md-5">
+      <card-driver-component-races>
+        <tr slot="driver-all-races"  *ngFor="let race of driver.races">
+          <td>{{ race.name }}</td>
+          <td>{{ race.posicionDriver }}</td>
+          <td>{{ race.time }}</td>
+        </tr>
+
+      </card-driver-component-races>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="contentTable">
+    <btn-races-component >
+        <li *ngFor="let race of races;index as j " slot="btn-races"><a class="dropdown-item" href="#">{{race.name}}</a></li>
+
+    </btn-races-component>
+    <driver-card-ranking-races>
+        <tr slot="driver-ranking" class="table-active"  *ngFor="let driver of drivers">
+            <td><img src="{{ driver.picture }}" class="card-img-top" alt="..." /></td>
+            <td>{{ driver.globalPosition }}</td>
+            <td>{{ driver.name }}</td>
+            <td>{{ driver.teamName }}</td>
+        </tr>
+    </driver-card-ranking-races>
+   
+</div>

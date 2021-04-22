@@ -1,0 +1,12 @@
+<div   class="contentTable">
+
+    <driver-card-ranking-races>
+        <tr slot="driver-ranking" class="table-active"  *ngFor="let driver of drivers;index as i ">
+            <td><img src="{{ driver.picture }}" class="card-img-top" alt="..." /></td>
+            <td><a>{{i+1 }}</a></td>
+            <td><a>{{ driver.name }}</a></td>
+            <td>{{ driver.teamName }}</td>
+        </tr>
+    </driver-card-ranking-races>
+
+</div>
