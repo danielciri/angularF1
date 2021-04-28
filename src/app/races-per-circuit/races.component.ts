@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Driver } from '../drivers-ranking-global/driver';
-import { Race } from './race';
+import { ActivatedRoute } from '@angular/router';
+import { Race } from '../models/race';
+
+
 import { RaceService } from './race.service';
 
 @Component({
@@ -8,16 +10,15 @@ import { RaceService } from './race.service';
   templateUrl: './races.component.html',
 
 })
-export class RacesComponent implements OnInit {
-  drivers: Driver [];
-
-  constructor(private raceService: RaceService) { }
+export class RacesPerCircuitComponent implements OnInit {
+  races: Race[];
+  constructor(private raceService: RaceService,private activatedRoute: ActivatedRoute) {
+    
+   }
 
   ngOnInit(): void {
     this.raceService.getRaces().subscribe(
-      drivers => this.drivers = drivers
-      
-      
+      races => this.races = races
     );
   }
 

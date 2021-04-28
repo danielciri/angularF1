@@ -4,33 +4,41 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import {  CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { DriversComponent } from './drivers-ranking-global/drivers.component';
-import { RacesComponent } from './races-per-circuit/races.component';
-import { RouterModule, Routes } from '@angular/router';
-import { DriverService } from './drivers-ranking-global/driver.service';
+
 import { DriversRacesComponent } from './drivers-all-Races/driversRaces.component';
-const routes: Routes=[
-  {path:'',redirectTo:'/drivers', pathMatch:'full'},
-  {path:'drivers',component: DriversComponent},
-  {path:'drivers',component: DriversRacesComponent},
-  {path:'drivers/races',component: DriversRacesComponent},
-]
+import { RacesPerCircuitComponent } from './races-per-circuit/races.component';
+import { AppRoutingModule } from './app-routing.module';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     DriversComponent,
-    RacesComponent,
-    DriversRacesComponent
+    DriversRacesComponent,
+    RacesPerCircuitComponent,
+    HeaderComponent,
+    FooterComponent,
+    
+   
+    
+
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule.forRoot(routes)
+ 
+    AppRoutingModule
+
   ],
-  providers: [DriverService],
+  providers: [],
   schemas:[
     CUSTOM_ELEMENTS_SCHEMA
   ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

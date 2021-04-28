@@ -1,21 +1,22 @@
 import { Injectable } from '@angular/core';
 import { from, Observable } from 'rxjs';
-import { Driver } from './driver';
+import { Driver } from '../models/driver';
 import {HttpClient} from '@angular/common/http'
-import { Race } from '../races-per-circuit/race';
+import { Race } from '../models/race';
+
+
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class DriverService {
-  private urlEndPoint:string = 'http://localhost:8080/api/ranking'
   private urlEndPointRaces: string = 'http://localhost:8080/api/races';
   constructor(private http: HttpClient) { }
 
-  getDrivers(): Observable<Driver[]>{
+  getDrivers(url:string): Observable<Driver[]>{
     //return of (CLIENTES);
-    return this.http.get<Driver[]>(this.urlEndPoint);
+    return this.http.get<Driver[]>(url);
   }
 
   getRaces(): Observable<Race[]>{

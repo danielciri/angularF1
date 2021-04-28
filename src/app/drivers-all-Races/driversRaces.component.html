@@ -1,6 +1,8 @@
 <div class="container">
+
   <div class="row">
     <div class="col-10 col-sm-5 col-md-4">
+     
       <driver-card-all-races
         name="{{ driver.name }}"
         age="{{ driver.age }}"
@@ -12,7 +14,10 @@
       <card-driver-component-races>
         <tr slot="driver-all-races"  *ngFor="let race of driver.races">
           <td>{{ race.name }}</td>
-          <td>{{ race.posicionDriver }}</td>
+          <td *ngIf="race.posicionDriver ===1">🥇</td>
+          <td *ngIf="race.posicionDriver ===2">🥈</td>
+          <td *ngIf="race.posicionDriver ===3">🥉</td>
+          <td *ngIf="race.posicionDriver>3">{{race.posicionDriver}}</td>
           <td>{{ race.time }}</td>
         </tr>
 

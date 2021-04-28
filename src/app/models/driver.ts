@@ -1,7 +1,7 @@
-import { Race } from "../races-per-circuit/race";
+import { Race } from "./race";
 
 export class Driver {
-    private id: string;
+    _id: string;
     name: string;
     picture: string;
     age: number;
