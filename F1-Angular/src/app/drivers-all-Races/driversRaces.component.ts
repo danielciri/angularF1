@@ -16,19 +16,18 @@ export class DriversRacesComponent implements OnInit {
   driver: Driver;
   private urlEndPoint:string = 'http://localhost:8080/api/driver/'
 
-  id:string;
+  _id:string;
   sub;
-  constructor(private driverService:DriverRacesService, private _Activatedroute:ActivatedRoute,
-    private _router:Router) {  }
+  constructor(private driverService:DriverRacesService, private activatedroute:ActivatedRoute) {  }
 
   ngOnInit(): void {
-    this.sub=this._Activatedroute.params.subscribe(params => { 
+    this.sub=this.activatedroute.params.subscribe(params => { 
       
-       this.id = params['id'];
-       let urlcorrect :string = this.urlEndPoint + this.id;
-       console.log(this.id);
+       this._id = params['id'];
+       let url :string = this.urlEndPoint + this._id;
+       console.log(this._id);
        
-       this.driverService.getDriver(urlcorrect).subscribe(
+       this.driverService.getDriver(url).subscribe(
         driver => this.driver = driver
       
   

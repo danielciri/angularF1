@@ -15,7 +15,7 @@ export class RaceService {
   constructor(private http: HttpClient) { }
 
   getRaces(): Observable<Race[]>{
-    //return of (CLIENTES);
+    //return of (Race);
     return this.http.get<Race[]>(this.urlEndPointRaces);
   }
 

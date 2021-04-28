@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { Race } from '../models/race';
 
 
@@ -12,7 +11,7 @@ import { RaceService } from './race.service';
 })
 export class RacesPerCircuitComponent implements OnInit {
   races: Race[];
-  constructor(private raceService: RaceService,private activatedRoute: ActivatedRoute) {
+  constructor(private raceService: RaceService) {
     
    }
 

@@ -15,12 +15,12 @@ export class DriverService {
   constructor(private http: HttpClient) { }
 
   getDrivers(url:string): Observable<Driver[]>{
-    //return of (CLIENTES);
+    //return of (Driver);
     return this.http.get<Driver[]>(url);
   }
 
   getRaces(): Observable<Race[]>{
-    //return of (CLIENTES);
+    //return of (race);
     return this.http.get<Race[]>(this.urlEndPointRaces);
   }
 
