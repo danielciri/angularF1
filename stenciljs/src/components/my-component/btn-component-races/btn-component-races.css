@@ -1,0 +1,25 @@
+.btn-group  {
+    margin-top: 80px;
+    margin-left: 81%;
+    height: 30px;
+    width: 100px;
+    background-color: #06b70b;
+    border-radius: 40px;
+    
+}
+
+.btn-group  .btn{
+
+    background-color: #06b70b;
+  
+    
+}
+
+.btn-group  .btn :hover{
+
+   background-color: green;
+  
+    
+}
+
+
